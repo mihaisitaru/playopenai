@@ -1,0 +1,67 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <br />
+      <div class="card">
+        <div class="card-body">
+          <div class="row" *ngIf="!apiKey">
+            <div class="col-md-5">
+              <input
+                type="password"
+                placeholder="Enter apiKey to begin"
+                value="{{ apiKey }}"
+                (change)="onApiKeyChange($event)"
+              />
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-12">
+              <div *ngIf="apiKey">apiKey saved!</div>
+              <div class="box">
+                <div *ngFor="let item of chatConversation">
+                  <p class="card-text padding" [ngClass]="item.cssClass">
+                    {{ item.person }} : {{ getText(item.response) }}
+                  </p>
+                </div>
+                <div>
+                  <img
+                    src="../../assets/icons/spinner.gif"
+                    *ngIf="showSpinner"
+                    width="80px"
+                    height="50px"
+                  />
+                </div>
+              </div>
+              <div class="row" *ngIf="apiKey">
+                <div class="col-md-12">
+                  Model in use
+                  <select [(ngModel)]="selectedModel">
+                    <option *ngFor="let option of options" [value]="option.id">
+                      {{ option.name }}
+                    </option>
+                  </select>
+                </div>
+              </div>
+              <br />
+              <div *ngIf="apiKey">
+                <textarea
+                  row="3"
+                  cols="128"
+                  class="form-control"
+                  [(ngModel)]="enteredText"
+                  placeholder="Start a conversation"
+                  (keyup)="checkResponseOnEnter($event)"
+                ></textarea>
+                <br />
+                <button type="button" (click)="checkResponseOnSend()">
+                  Send
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+.chatGPT {
+  font-weight: bold;
+  color: darkblue;
+}
+
+.human {
+  font-weight: bold;
+  color: darkgray;
+}
+
+.box {
+  border: dotted 2px #1976d2;
+  padding: 20px;
+  min-height: 400px;
+  max-height: 400px;
+  overflow-y: scroll;
+}
+
+.padding {
+  padding: 5px;
+}

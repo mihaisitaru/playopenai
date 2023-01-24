@@ -1,0 +1,124 @@
+<!-- Toolbar -->
+<div class="toolbar" role="banner"></div>
+
+<div class="content" role="main">
+  <!-- Highlight Card -->
+  <div class="card highlight-card card-small">
+    <span>{{ title }}</span>
+  </div>
+
+  <router-outlet></router-outlet>
+
+  <a href="https://beta.openai.com/docs/models/gpt-3" target="_blank">Models</a>
+  <br /><br />
+
+  <div class="models-container">
+    <div class="model-card-container" *ngFor="let item of gptModels">
+      <h5 class="card-header">Name - {{ item.model }}</h5>
+      <div class="card-body">
+        <h5 class="card-title">Description</h5>
+        <p class="card-text">{{ item.description }}</p>
+        <p class="card-text"><b>Maximum requests: </b>{{ item.maxRequest }}</p>
+        <p class="card-text"><b>Training data: </b>{{ item.trainingData }}</p>
+      </div>
+    </div>
+
+    <!-- Resources -->
+    <h2>Resources</h2>
+    <p>More details about ChatGPT and AI in general:</p>
+
+    <div class="card-container">
+      <a
+        class="card"
+        target="_blank"
+        rel="noopener"
+        href="https://en.wikipedia.org/wiki/GPT-3"
+      >
+        <span>GPT-3 - Wiki</span>
+      </a>
+
+      <a
+        class="card"
+        target="_blank"
+        rel="noopener"
+        href="https://openai.com/blog/webgpt/"
+      >
+        <span>WebGPT - article 1</span>
+      </a>
+
+      <a
+        class="card"
+        target="_blank"
+        rel="noopener"
+        href="https://arxiv.org/pdf/2112.09332.pdf"
+      >
+        <span>WebGPT - article 2</span>
+      </a>
+
+      <a
+        class="card"
+        target="_blank"
+        rel="noopener"
+        href="https://miro.medium.com/max/700/1*muqSx-VZVdwQIIGB84tvrQ.jpeg"
+      >
+        <span>ChatGPT - Overview</span>
+      </a>
+
+      <a
+        class="card"
+        target="_blank"
+        rel="noopener"
+        href="https://medium.com/@watchdogs8232/chatgpt-for-programmers-90cb91246b6e"
+      >
+        <span>ChatGPT for programmers</span>
+      </a>
+
+      <a
+        class="card"
+        target="_blank"
+        rel="noopener"
+        style="text-align: center"
+        href="https://www.youtube.com/watch?v=ix2UzKDb0OY"
+      >
+        <span>Build an Angular App using ChatGPT</span>
+      </a>
+
+      <a
+        class="card"
+        target="_blank"
+        rel="noopener"
+        href="https://www.futurepedia.io/"
+      >
+        <span>AI tools directory 1</span>
+      </a>
+
+      <a
+        class="card"
+        target="_blank"
+        rel="noopener"
+        href="https://theresanaiforthat.com/"
+      >
+        <span>AI tools directory 2</span>
+      </a>
+
+      <a
+        class="card"
+        target="_blank"
+        rel="noopener"
+        href="https://www.caktus.ai/"
+      >
+        <span>AI for edutation</span>
+      </a>
+
+      <a
+        class="card"
+        target="_blank"
+        rel="noopener"
+        style="text-align: center"
+        href="https://www.retune.so/"
+      >
+        <span>The missing frontend for GPT-3</span>
+      </a>
+    </div>
+  </div>
+</div>
